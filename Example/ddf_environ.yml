@@ -1,0 +1,10 @@
+name: ddf_environ
+
+dependencies:
+- numpy
+- pandas
+- flopy
+- geopandas
+- matplotlib
+- shapely
+- adjustText

@@ -1,0 +1,20 @@
+BEGIN OPTIONS
+  DIGITS 8
+  PRINT_INPUT
+END OPTIONS
+
+BEGIN CONTINUOUS FILEOUT Output_chd.csv
+# obsname  obstype   ID
+  seg1     CHD       seg1 
+  seg2     CHD       seg2 
+  seg3     CHD       seg3 
+  seg4     CHD       seg4 
+  seg5     CHD       seg5 
+  seg6     CHD       seg6 
+  seg7     CHD       seg7 
+  seg8     CHD       seg8 
+  seg9     CHD       seg9 
+  seg10    CHD       seg10
+  seg11    CHD       seg11
+  seg12    CHD       seg12
+END CONTINUOUS
