@@ -242,8 +242,13 @@ The case study compares drawdown estimated by DDF to drawdown simulated by a sin
 
 The numerical model was constructed to be consistent with the Theis equation assumptions inherent to the DDF method and is not intended to represent heterogeneity or historical conditions at the case study site: The aquifer has a homogeneous hydraulic conductivity of 3 m/day, a thickness of 30.5 m, and a storativity of 0.1. The MODFLOW model is constructed using a Voronoi grid with local refinement near streams and pumping wells, implemented using FloPy (Hughes et al., 2024). Cell areas range from approximately 0.01 km2 along the stream channel up to 270 km2 far from the streams. An initial head of 0 m was specified, such that the initial head coincides with the model top elevation. The MODFLOW model applies a constant head boundary condition of 0 m to represent the stream network so that the stream is always connected to the aquifer and provides a constant source of water. No other model stresses are applied. Identical aquifer properties were applied to the DDF calculation. For the DDF inputs, the stream network was discretized into 100-m uniform reaches. Notably, DDF achieves results in seconds, whereas the MODFLOW simulation requires significantly longer run times.
 
-To create the DDF input files, run the Python script `_create_ddf.py`. This script has several associated dependencies, so for convenience, a virtual environment setup is included. To build the environment with conda, run `conda env create -f ddf_environ.yml` before running any python scripts.
-To run the example, call `01_run_each_well.bat` to run DDF and `02_run_mf.bat` to run MODFLOW. To generate plots of the results, run the Python script `_plot_results.py`
+This script has several associated dependencies, so for convenience, a virtual environment setup is included. 
+- To build the environment with conda, run `conda env create -f ddf_environ.yml` in the command line from the `Example` directory
+- Activate the environment by running `conda activate ddf_environ` before running the python scripts.
+
+To create the DDF input files, run the Python script `_create_ddf.py`. 
+To run the example, call the batch scripts `01_run_each_well.bat` to run DDF and `02_run_mf.bat` to run MODFLOW. 
+To generate plots of the results, run the Python script `_plot_results.py`
 
 
 <p align="center">
