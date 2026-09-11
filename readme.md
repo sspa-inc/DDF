@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="Logos_SSPA-Software_285x100_DDF.png" width="800"/>
+</p>
+
+
 # DDF — Distributed Drawdown Function for Estimating Pumping Effects on Complex Stream Networks
 
 DDF is a Fortran-based toolkit for analyzing **stream depletion** and **drawdown** caused by groundwater pumping using a superposition approach.
@@ -14,7 +19,7 @@ The project is organized as a small scientific codebase you can build locally an
 
 ## Why DDF?
 
-Groundwater pumping near hydraulically connected streams may induce **streamflow depletion**. Most analytical models oversimply stream geometry and numerical models require considerably more data and intensive computation. DDF is an analytical tool designed to efficienty estimate groundwater drawdown and stream depletion caused by pumping near complex, meandering stream networks. Further details on the method are available in Ou et al, 2026 *(under review)*.
+Groundwater pumping near hydraulically connected streams may induce **streamflow depletion**. Most analytical models require simplified representations of streams and stream-aquifer-well hydraulics, and numerical models require considerably more data and intensive computation to improve upon analytical estimates. DDF is an analytical tool designed to efficienty estimate groundwater drawdown and stream depletion caused by pumping near complex, meandering stream networks. Further details on the method are available in Ou et al, 2026.
 
 DDF aims to provide a lightweight, transparent implementation that can be:
 - **Auditable**: minimal dependencies, readable Fortran.
@@ -23,6 +28,10 @@ DDF aims to provide a lightweight, transparent implementation that can be:
 - **Efficient**: extremely fast compared with building and running a numerical model.
 
 > If you use this code in a publication or report, please cite the relevant source (see “Citing” below). DDF was developed by S.S. Papadopulos & Associates, Inc with funding contributions from the New Mexico Office of the State Engineer and the Bureau of Reclamation WaterSMART Applied Science Grant Program.
+
+> DISCLAIMER: This program is provided FREE of charge. The authors request only that application of the software and production of results using the code is accompanied by a suitable acknowledgment. The software is provided “AS IS”, without warranty of any kind, including without limitation the warranties of merchantability, fitness for a particular purpose and non-infringement. The entire risk and responsibility as to the quality and performance of the Software is borne by the user. The author(s) disclaim all other warranties.
+
+
 
 <p align="center">
   <img src="Example/SSP&A_Logo+Wordmark_white+blue-bkgrnd.png" width="800"/>
@@ -244,9 +253,9 @@ The following outputs are generated:
 
 ## Example Illustration
 
-The case study compares drawdown estimated by DDF to drawdown simulated by a single-layer MODFLOW 6 (Langevin et al, 2017) groundwater model for a complex stream network in the Oak Creek watershed in eastern Nebraska. A constant pumping rate of 574 m3/day (equivalent to approximately 170 af/yr) was simulated at each of six wells located throughout the network for a simulation period of 50 years. The wells were positioned such that they are varied in their proximity to the stream network and the complexity of the closest portion of the network (i.e., meanders versus relatively linear or multiple nearby tributaries).
+The hypothetical site study compares drawdown and stream depletion estimated by DDF to those simulated by a single-layer MODFLOW 6 (Langevin et al, 2017) groundwater model for a complex stream network in the Oak Creek watershed in eastern Nebraska. A constant pumping rate of 574 m3/day (equivalent to approximately 170 af/yr) is simulated at each of six wells located throughout the network for a simulation period of 50 years. The wells are positioned such that they are varied in their proximity to the stream network and the complexity of the closest portion of the network (i.e., meanders versus relatively linear or multiple nearby tributaries).
 
-The numerical model was constructed to be consistent with the Theis equation assumptions inherent to the DDF method and is not intended to represent heterogeneity or historical conditions at the case study site: The aquifer has a homogeneous hydraulic conductivity of 3 m/day, a thickness of 30.5 m, and a storativity of 0.1. The MODFLOW model is constructed using a Voronoi grid with local refinement near streams and pumping wells, implemented using FloPy (Hughes et al., 2024). Cell areas range from approximately 0.01 km2 along the stream channel up to 270 km2 far from the streams. An initial head of 0 m was specified, such that the initial head coincides with the model top elevation. The MODFLOW model applies a constant head boundary condition of 0 m to represent the stream network so that the stream is always connected to the aquifer and provides a constant source of water. No other model stresses are applied. Identical aquifer properties were applied to the DDF calculation. For the DDF inputs, the stream network was discretized into 100-m uniform reaches. Notably, DDF achieves results in seconds, whereas the MODFLOW simulation requires significantly longer run times.
+The numerical model is constructed to be consistent with the Theis equation assumptions inherent to the DDF method and is not intended to represent heterogeneity or historical conditions at the case study site: The aquifer has a homogeneous hydraulic conductivity of 3 m/day, a thickness of 30.5 m, and a storativity of 0.1. The MODFLOW model is constructed using a Voronoi grid with local refinement near streams and pumping wells, implemented using FloPy (Hughes et al., 2024). Cell areas range from approximately 0.01 km2 along the stream channel up to 270 km2 far from the streams. An initial head of 0 m was specified, such that the initial head coincides with the model top elevation. The MODFLOW model applies a constant head boundary condition of 0 m to represent the stream network so that the stream is always connected to the aquifer and provides a constant source of water. No other model stresses are applied. Identical aquifer properties were applied to the DDF calculation. For the DDF inputs, the stream network was discretized into 100-m uniform reaches. Notably, DDF achieves results in seconds, whereas the MODFLOW simulation requires significantly longer run times.
 
 This script has several associated dependencies, so for convenience, a virtual environment setup is included. 
 - To build the environment with conda, run `conda env create -f ddf_environ.yml` in the command line from the `Example` directory
