@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Logos_SSPA-Software_285x100_DDF.png" width="800"/>
+  <img src="Example/Logos_SSPA-Software_285x100_DDF.png" width="800"/>
 </p>
 
 
