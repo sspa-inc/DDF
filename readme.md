@@ -96,6 +96,12 @@ If lfac > 0 → Line 2 must be two numbers: cellsize1, cellmutl (see Branch B).
 
  - `nodefac`: real. A value between 0 and 1 is used to denote where the stream node should be placed along each stream reach. A value of 0 places it at the first endpoint, and a value of 1 places it at the second endpoint. If not entered, a default value of 0.5 (midpoint) is used.
 
+<p align="center">
+  <img src="Example/DDF_nodes.png" width="450"/>
+</p>
+
+*Panel A shows a nodefac value of 0.5 (midpoint), while panel B shows a nodefac of 1 (endpoint). This example river is coarsely discretized to better show the difference between nodefac values.*
+
 #### Line 2
 
 ##### Case A: `lfac < 0`:
