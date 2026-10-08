@@ -272,4 +272,4 @@ To generate plots of the results, run the Python script `_plot_results.py`
 
 ## Citing
 
-*Ou, G., Rogers, J.D., Sandoe, L., Barth, G., 2026. A Rapid Analytical Tool for Estimating Pumping Effects on Complex Stream Networks. (under review)*
+Ou, G., Rogers, J.D., Sandoe, L., and G. Barth, 2026. A Rapid Analytical Tool for Estimating Pumping Effects on Complex Stream Networks. *Groundwater* https://doi.org/10.1111/gwat.70113
